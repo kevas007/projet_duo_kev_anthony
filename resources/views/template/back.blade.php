@@ -10,7 +10,7 @@
 </head>
 <body>
         @include('partials.navBack.navbar')
-        @yield('content')
+        @yield('body')
 
     <script src="{{ asset('js/app.js')}}"></script>
 </body>

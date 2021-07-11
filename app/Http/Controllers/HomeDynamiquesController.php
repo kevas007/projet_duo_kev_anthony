@@ -9,7 +9,7 @@ class HomeDynamiquesController extends Controller
 {
 
     public function create(){
-        return view('pages.backOffice.homedynamiques');
+        return view('indexBack');
     }
 
     public function store(Request $request){
@@ -23,6 +23,6 @@ class HomeDynamiquesController extends Controller
         $store->h4_4_service = $request->h4_4_service;
         $store->p4_service = $request->p4_service;
         $store->save();
-        return redirect('/pages.backOffice.homedynamiques');
+        return redirect('/');
     }
 }
