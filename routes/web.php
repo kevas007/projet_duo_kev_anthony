@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeDynamiquesController;
 use App\Models\ContacDynamiques;
 use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
@@ -32,5 +33,10 @@ Route::get('/contact', function () {
 
 
 Route::get('/backoffice', function () {
-    return view('template.back');
+    $homeStatics = HomeStatics::all();
+    $homeDynamiques =HomeDynamiques::all();
+    return view('indexBack', compact('homeStatics', "homeDynamiques"));
 });
+
+Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
+Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
