@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class HomeDynamiquesController extends Controller
 {
+
+    public function create(){
+        return view('pages.backOffice.homedynamiques');
+    }
+
     public function store(Request $request){
         $store = new HomeDynamiques;
         $store->h4_1_service = $request->h4_1_service;
@@ -18,6 +23,6 @@ class HomeDynamiquesController extends Controller
         $store->h4_4_service = $request->h4_4_service;
         $store->p4_service = $request->p4_service;
         $store->save();
-        return redirect('/');
+        return redirect('/pages.backOffice.homedynamiques');
     }
 }

@@ -23,19 +23,6 @@ class CreateHomeStaticsTable extends Migration
             $table->string('ahref');
             $table->mediumText('sous_titre2');
             $table->mediumText('para4');
-            $table->mediumText('titreBlog');
-            $table->mediumText('sous_titreBlog');
-            $table->mediumText('paraBlog');
-            $table->mediumText('titrePortfolio');
-            $table->mediumText('sous_titrePortfolio');
-            $table->mediumText('btn-sousTitre');
-            $table->mediumText('titreContact');
-            $table->mediumText('sous_titreContact');
-            $table->mediumText('paraContact');
-            $table->mediumText('companyName');
-            $table->mediumText('phone');
-            $table->mediumText('fax');
-            $table->string('email');
             $table->timestamps();
         });
     }

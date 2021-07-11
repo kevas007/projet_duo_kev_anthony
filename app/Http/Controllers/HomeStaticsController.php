@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class HomeStaticsController extends Controller
 {
+    public function create(){
+        return view('pages.backOffice.homeStatic');
+    }
     public function store(Request $request){
         $store = new HomeStatics;
         $store->titreHome = $request->titreHome;
@@ -31,6 +34,6 @@ class HomeStaticsController extends Controller
         $store->fax = $request->fax;
         $store->email = $request->email;
         $store->save();
-        return redirect('/');
+        return redirect('/pages.backOffice.homeStatic');
     }
 }
