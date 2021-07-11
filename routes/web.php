@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\ContacDynamiques;
+use App\Models\ContacStatics;
+use App\Models\HomeDynamiques;
+use App\Models\HomeStatics;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +18,19 @@ use Illuminate\Support\Facades\Route;
 */
 //anthony
 Route::get('/', function () {
-    return view('index');
+    $homeStatics = HomeStatics::all();
+    $homeDynamiques =HomeDynamiques::all();
+
+    return view('/index', compact('homeStatics', "homeDynamiques"));
+});
+
+Route::get('/contact', function () {
+    $contacStatics = ContacStatics::all();
+    $contacdynamiques = ContacDynamiques::all();
+    return view('pages.contact', compact('contacStatics', 'contacdynamiques'));
+})->name('contact');
+
+
+Route::get('/backoffice', function () {
+    return view('template.back');
 });

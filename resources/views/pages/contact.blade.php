@@ -1,4 +1,4 @@
 @extends('template.main')
 @section('content')
-@include('partials.sectionIndex.sectionIndex')
+@include('partials.contact.contact')
 @endsection
