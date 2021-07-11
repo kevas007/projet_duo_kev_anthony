@@ -1,7 +1,8 @@
 <div class="hero hero-max-720 hero-contact background-overlay">
 
     <div class="hero-text">
-        <h1 class="white-text">Contact Us</h1>
+        @foreach ($contacStatics as $contacStatic)
+            <h1 class="white-text">{{ $contacStatic-> titreContact }}</h1>
     </div><!-- /.hero-text -->
 
     <div class="hero-arrow">
@@ -24,15 +25,19 @@
 
                         <div class="get-in-touch">
 
-                            <h2 class="section-title">Get in touch</h2>
-                            <p class="small-title mb-50">Just a note on how wonderful this theme is! If you are thinking of purchasing, i'd say do it! The flexibility is awesome possibilities are endless.</p>
+                            <h2 class="section-title">{{ $contacStatic-> sous_titreContact}}</h2>
+                            <p class="small-title mb-50">	{{ $contacStatic-> paraContact}}	</p>
 
-                            <ul class="list-unstyled mb-0">
-                                <li>BusinessPerfect</li>
-                                <li>Phone: <a class="gray-text" href="tel:+15417543010">+1-541-754-3010</a></li>
-                                <li>Fax: <a class="gray-text" href="tel:+15417543010">+1-541-754-3010</a></li>
-                                <li><a class="white-text" href="mailto:hello@businessperfect.com">hello@businessperfect.com</a></li>
-                            </ul>
+                            @endforeach
+                            @foreach ($contacdynamiques as $contactdynamique)
+                                <ul class="list-unstyled mb-0">
+                                    <li>{{ $contactdynamique->li_1_Contact }} </li>
+                                    <li>!{$contactdynamique-> li_2_Contact}! </li>
+                                    <li>{!$contactdynamique-> li_3_Contact!} </a></li>
+                                    <li>{!$contactdynamique-> li4_Contact!} </li>
+                                </ul>
+
+                            @endforeach
 
                         </div><!-- /.get-in-touch -->
 
@@ -47,10 +52,12 @@
                         <form class="form-horizontal contact-form text-right">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="text" name="contact-name" placeholder="Name *" required>
+                                    <input class="form-control" type="text" name="contact-name" placeholder="Name *"
+                                        required>
                                 </div>
                                 <div class="col-sm-6">
-                                    <input class="form-control" type="email" name="contact-email" placeholder="E-mail *" required>
+                                    <input class="form-control" type="email" name="contact-email" placeholder="E-mail *"
+                                        required>
                                 </div>
                             </div>
                             <input class="form-control" type="text" name="contact-subject" placeholder="Subject">
@@ -79,7 +86,8 @@
 
                 <a class="white-text black-bg twitter-bg" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <a class="white-text gray-bg facebook-bg" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a class="white-text black-bg google-plus-bg" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                <a class="white-text black-bg google-plus-bg" href="#"><i class="fa fa-google-plus"
+                        aria-hidden="true"></i></a>
                 <a class="white-text gray-bg message-bg" href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
 
             </div>

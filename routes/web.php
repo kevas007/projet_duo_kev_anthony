@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\ContacDynamiques;
+use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('/contact', function () {
-    return view('pages.contact');
+    $contacStatics = ContacStatics::all();
+    $contacdynamiques = ContacDynamiques::all();
+    return view('pages.contact', compact('contacStatics', 'contacdynamiques'));
 })->name('contact');
