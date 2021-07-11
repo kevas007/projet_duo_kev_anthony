@@ -21,7 +21,7 @@ Route::get('/', function () {
     $homeStatics = HomeStatics::all();
     $homeDynamiques =HomeDynamiques::all();
 
-    return view('index', compact('homeStatics', "homeDynamiques"));
+    return view('/index', compact('homeStatics', "homeDynamiques"));
 });
 
 Route::get('/contact', function () {
@@ -29,3 +29,8 @@ Route::get('/contact', function () {
     $contacdynamiques = ContacDynamiques::all();
     return view('pages.contact', compact('contacStatics', 'contacdynamiques'));
 })->name('contact');
+
+
+Route::get('/backoffice', function () {
+    return view('template.back');
+});

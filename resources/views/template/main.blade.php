@@ -53,7 +53,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.slicknav.min.') }}js"></script>
+    <script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
     <script src="{{ asset('assets/js/slick.min.js') }}"></script>
     <script src="{{ asset('assets/js/touchswipe.min.js') }}"></script>
     <script src="{{ asset('assets/js/skrollr.min.js') }}"></script>

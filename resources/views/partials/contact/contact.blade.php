@@ -32,9 +32,9 @@
                             @foreach ($contacdynamiques as $contactdynamique)
                                 <ul class="list-unstyled mb-0">
                                     <li>{{ $contactdynamique->li_1_Contact }} </li>
-                                    <li>!{$contactdynamique-> li_2_Contact}! </li>
-                                    <li>{!$contactdynamique-> li_3_Contact!} </a></li>
-                                    <li>{!$contactdynamique-> li4_Contact!} </li>
+                                    <li>{!!$contactdynamique-> li_2_Contact !!} </li>
+                                    <li>{!!$contactdynamique-> li_3_Contact!!} </a></li>
+                                    <li>{!!$contactdynamique-> li4_Contact!!} </li>
                                 </ul>
 
                             @endforeach
