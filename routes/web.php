@@ -32,6 +32,15 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+Route::get('/portfolio', function () {
+    return view('pages.portfolio');
+});
+
+
+Route::get('/blog', function () {
+    return view('pages.blog');
+});
+
 Route::get('/backoffice', function () {
     $homeStatics = HomeStatics::all();
     $homeDynamiques =HomeDynamiques::all();
