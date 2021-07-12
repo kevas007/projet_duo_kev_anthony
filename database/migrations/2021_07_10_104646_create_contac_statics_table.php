@@ -18,7 +18,7 @@ class CreateContacStaticsTable extends Migration
             $table->mediumText('titreContact');
             $table->mediumText('sous_titreContact');
             $table->mediumText('paraContact');
-            $table->mediumText('companyName');
+            $table->mediumText('name');
             $table->mediumText('phone');
             $table->mediumText('fax');
             $table->string('email');

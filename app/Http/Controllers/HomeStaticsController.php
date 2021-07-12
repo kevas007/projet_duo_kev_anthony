@@ -14,26 +14,16 @@ class HomeStaticsController extends Controller
         $store = new HomeStatics;
         $store->titreHome = $request->titreHome;
         $store->para1 = $request->para1;
-        $store->para2 = $request->para2;
+        $store->para2  = $request->para2;
+        $store->img = $request->img;
         $store->sous_titre1 = $request->sous_titre1;
         $store->para3 = $request->para3;
         $store->ahref = $request->ahref;
         $store->sous_titre2 = $request->sous_titre2;
         $store->para4 = $request->para4;
-        $store->titreBlog = $request->titreBlog;
-        $store->sous_titreBlog = $request->sous_titreBlog;
-        $store->paraBlog = $request->paraBlog;
-        $store->titrePortfolio = $request->titrePortfolio;
-        $store->sous_titrePortfolio = $request->sous_titrePortfolio;
-        $store->btn_sousTitre = $request->btn_sousTitre;
-        $store->titreContact = $request->titreContact;
-        $store->sous_titreContact = $request->sous_titreContact;
-        $store->paraContact = $request->paraContact;
-        $store->companyName = $request->companyName;
-        $store->phone = $request->phone;
-        $store->fax = $request->fax;
-        $store->email = $request->email;
+        $store->para5 = $request->para5;
+        $store->ahref2 = $request->ahref2;
         $store->save();
-        return redirect('/pages.backOffice.homeStatic');
+        return redirect('/');
     }
 }

@@ -2,7 +2,7 @@
 
     <div class="hero-text">
         @foreach ($contacStatics as $contacStatic)
-            <h1 class="white-text">{{ $contacStatic-> titreContact }}</h1>
+            <h1 class="white-text">{{ $contacStatic->titreContact }}</h1>
     </div><!-- /.hero-text -->
 
     <div class="hero-arrow">
@@ -25,17 +25,15 @@
 
                         <div class="get-in-touch">
 
-                            <h2 class="section-title">{{ $contacStatic-> sous_titreContact}}</h2>
-                            <p class="small-title mb-50">	{{ $contacStatic-> paraContact}}	</p>
+                            <h2 class="section-title">{{ $contacStatic->sous_titreContact }}</h2>
+                            <p class="small-title mb-50"> {{ $contacStatic->paraContact }} </p>
 
-                            @endforeach
-                            @foreach ($contacdynamiques as $contactdynamique)
-                                <ul class="list-unstyled mb-0">
-                                    <li>{{ $contactdynamique->li_1_Contact }} </li>
-                                    <li>{!!$contactdynamique-> li_2_Contact !!} </li>
-                                    <li>{!!$contactdynamique-> li_3_Contact!!} </a></li>
-                                    <li>{!!$contactdynamique-> li4_Contact!!} </li>
-                                </ul>
+                            <ul class="list-unstyled mb-0">
+                                <li>{{ $contacStatic-> name }} </li>
+                                <li>{!! $contacStatic-> phone !!} </li>
+                                <li>{!! $contacStatic-> fax !!} </a></li>
+                                <li>{!! $contacStatic -> email !!} </li>
+                            </ul>
 
                             @endforeach
 
