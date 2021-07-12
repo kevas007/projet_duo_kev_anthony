@@ -1,5 +1,6 @@
 
     <div class="hero background-overlay">
+        
     @foreach ($homeStatics  as $homeStactic  )
     <div class="hero-text">
         <h1>{{ $homeStactic->titreHome }}</h1>

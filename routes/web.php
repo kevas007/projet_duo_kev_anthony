@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\HomeDynamiquesController;
+use App\Http\Controllers\PortfolioController;
+
 use App\Models\ContacDynamiques;
 use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
+use App\Models\Portfolios;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +36,16 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+Route::get('/portfolio', function () {
+    $portfolios = Portfolios::all();
+    return view('pages.portfolio',compact('portfolios'));
+});
+
+
+Route::get('/blog', function () {
+    return view('pages.blog');
+});
+
 Route::get('/backoffice', function () {
     $homeStatics = HomeStatics::all();
     $homeDynamiques =HomeDynamiques::all();
@@ -40,3 +54,5 @@ Route::get('/backoffice', function () {
 
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
+Route::post('/portfolio',[PortfolioController ::class,'store']);
+Route::post('/portfolio',[PortfolioController ::class,'create']);
