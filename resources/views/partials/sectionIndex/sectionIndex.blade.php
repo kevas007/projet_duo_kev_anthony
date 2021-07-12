@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-
-    <div class="hero background-overlay">
-        
-    @foreach ($homeStatics  as $homeStactic  )
-=======
 <div class="hero background-overlay">
->>>>>>> 4507eca17c8ae683d2f93b2b61ffb05afef6ec22
     <div class="hero-text">
         @foreach ($homeStatics as $homeStactic)
 
