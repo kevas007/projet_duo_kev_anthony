@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeDynamiquesController;
+use App\Http\Controllers\HomeStaticsController;
 use App\Models\ContacDynamiques;
 use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
@@ -27,8 +28,7 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     $contacStatics = ContacStatics::all();
-    $contacdynamiques = ContacDynamiques::all();
-    return view('pages.contact', compact('contacStatics', 'contacdynamiques'));
+    return view('pages.contact', compact('contacStatics'));
 })->name('contact');
 
 
@@ -40,3 +40,5 @@ Route::get('/backoffice', function () {
 
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
+Route::get('/static',[HomeStaticsController ::class,'create']);
+Route::post('/newstatic',[HomeStaticsController ::class,'store']);
