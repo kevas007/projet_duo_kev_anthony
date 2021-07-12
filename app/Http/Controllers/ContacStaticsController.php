@@ -12,7 +12,7 @@ class ContacStaticsController extends Controller
         $store->titreContac = $request->titreContac;
         $store->sous_titreContact = $request->sous_titreContact;
         $store->paraContact = $request->paraContact;
-        $store->companyName = $request->companyName;
+        $store-> name = $request->name;
         $store->phone= $request->phone;
         $store->fax = $request->fax;
         $store->email = $request->email;

@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 
     <div class="hero background-overlay">
         
     @foreach ($homeStatics  as $homeStactic  )
+=======
+<div class="hero background-overlay">
+>>>>>>> 4507eca17c8ae683d2f93b2b61ffb05afef6ec22
     <div class="hero-text">
-        <h1>{{ $homeStactic->titreHome }}</h1>
+        @foreach ($homeStatics as $homeStactic)
+
+            <h1>{{ $homeStactic->titreHome }}</h1>
     </div> <!-- /.hero-text -->
     <div class="hero-arrow">
         <a class="scrollTo" href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -15,10 +21,11 @@
 
     <section class="site-section section-quote text-center">
 
+
         <div class="container">
 
-            <p class="quote">{{ $homeStactic -> para1 }}</p>
-            <p class="quote-owner yellow-text">{{ $homeStactic -> para2 }}</p>
+            <p class="quote">{{ $homeStactic->para1 }}</p>
+            <p class="quote-owner yellow-text">{{ $homeStactic->para2 }}</p>
 
         </div>
 
@@ -31,16 +38,17 @@
             <div class="row">
 
                 <div class="col-sm-6 hidden-xs">
-                    <img class="img-carousel" src="{{ asset('assets/img/we-are-creative.jpg') }}" alt="We are creative">
+                    <img class="img-carousel" src="{{ asset('assets/img/' . $homeStactic->img) }}"
+                        alt="We are creative">
                 </div>
 
                 <div class="col-sm-6 project yellow-bg">
 
                     <div class="project-content">
 
-                        <h3 class="section-title">{{ $homeStactic -> sous_titre1 }}</h3>
-                        <p class="small-title mb-30">{{ $homeStactic -> para3 }}</p>
-                        <a href="#" class="white-text">{{ $homeStactic -> ahref }}</a>
+                        <h3 class="section-title">{{ $homeStactic->sous_titre1 }}</h3>
+                        <p class="small-title mb-30">{{ $homeStactic->para3 }}</p>
+                        <a href="#" class="white-text">{{ $homeStactic->ahref }}</a>
 
                     </div> <!-- /.project-content-->
 
@@ -58,74 +66,47 @@
 
             <div class="text-center">
 
-                <h3 class="section-title">{{ $homeStactic -> sous_titre2 }}</h3>
-                <p class="section-text">{{ $homeStactic -> para4 }}</p>
-
-            </div>
-    @endforeach
-
-                <div class="row">
-
-                @foreach ($homeDynamiques as $homeDynamique )
-                <div class="col-sm-5 col-sm-offset-1 col-xs-6">
-
-                    <div class="service">
-
-                        <div class="service-icon">
-                            <i class=" {{ $homeDynamique -> i1_service}}" aria-hidden="true"></i>
-                        </div><!-- /.service-icon -->
-                        <div class="service-content">
-                            <h4 class="service-title"> {{ $homeDynamique -> h4_1_service}}</h4>
-                            <p> {{ $homeDynamique -> p1_service}}</p>
-                        </div><!-- /.service-content -->
-
-                    </div><!-- /.service -->
-
-                    <div class="service">
-
-                        <div class="service-icon">
-                            <i class="{{ $homeDynamique -> i2_service}}" aria-hidden="true"></i>
-                        </div><!-- /.service-icon -->
-                        <div class="service-content">
-                            <h4 class="service-title">{{ $homeDynamique -> h4_2_service}}e</h4>
-                            <p>{{ $homeDynamique -> p2_service}}</p>
-                        </div><!-- /.service-content -->
-
-                    </div><!-- /.service -->
-
-                </div>
-
-                <div class="col-sm-5 col-xs-6">
-
-                    <div class="service">
-
-                        <div class="service-icon">
-                            <i class="{{ $homeDynamique -> i3_service}}" aria-hidden="true"></i>
-                        </div><!-- /.service-icon -->
-                        <div class="service-content">
-                            <h4 class="service-title">{{ $homeDynamique -> h4_3_service}}</h4>
-                            <p>{{ $homeDynamique -> p3_service}}</p>
-                        </div><!-- /.service-content -->
-
-                    </div><!-- /.service -->
-
-                    <div class="service">
-
-                        <div class="service-icon">
-                            <i class="{{ $homeDynamique -> i4_service}}" aria-hidden="true"></i>
-                        </div><!-- /.service-icon -->
-                        <div class="service-content">
-                            <h4 class="service-title">{{ $homeDynamique -> h4_4_service}}</h4>
-                            <p>{{ $homeDynamique -> p4_service}}</p>
-                        </div><!-- /.service-content -->
-
-                    </div><!-- /.service -->
-
-                </div>
+                <h3 class="section-title">{{ $homeStactic->sous_titre2 }}</h3>
+                <p class="section-text">{{ $homeStactic->para4 }}</p>
 
             </div>
 
-        </div>
+
+            <div class="row">
+                @foreach ( $homeDynamiques as $homeDynamique )
+                <div  id="forech" class="col-sm-5 col-sm-offset-1 col-xs-6 mt-2">
+                    <div class="service mt-5">
+
+                        <div class="service-icon mt-5">
+                            <i class="{{ $homeDynamique->i1_service }}" aria-hidden="true"></i>
+                        </div><!-- /.service-icon -->
+                        <div class="service-content">
+                            <h4 class="service-title">{{ $homeDynamique -> h4_1_service }}</h4>
+                            <p>{{ $homeDynamique->p1_service }}</p>
+                        </div><!-- /.service-content -->
+
+                    </div><!-- /.service -->
+                    {{-- <div class="service  mt-2">
+
+                        <div class="service-icon">
+                            <i class="{{ $homeDynamique->i1_service }}" aria-hidden="true"></i>
+                        </div><!-- /.service-icon -->
+                        <div class="service-content">
+                            <h4 class="service-title">{{ $homeDynamique -> h4_1_service }}</h4>
+                            <p>{{ $homeDynamique->p1_service }}</p>
+                        </div><!-- /.service-content -->
+
+                    </div><!-- /.service --> --}}
+
+
+                </div>
+                    @endforeach
+                </div>
+
+
+
+
+            </div>
 
     </section><!-- /.section-services -->
 
@@ -133,27 +114,29 @@
 
         <div class="container">
 
-            <p class="section-title-small white-text mb-50">{{ $homeDynamique -> p5_service}}</p>
-            <a class="btn" href="#">{{ $homeDynamique -> ahref_service}}</a>
+            <p class="section-title-small white-text mb-50">{{ $homeStactic->para5 }}</p>
+            <a class="btn" href="#">{{ $homeStactic->ahref2 }}</a>
 
         </div>
 
     </section><!-- /.section-work-with-us -->
 
-                @endforeach
-        <section class="social-networks">
+    @endforeach
 
-            <div class="container-fluid">
+    <section class="social-networks">
 
-                <div class="row">
+        <div class="container-fluid">
 
-                    <a class="white-text black-bg twitter-bg" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a class="white-text gray-bg facebook-bg" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a class="white-text black-bg google-plus-bg" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                    <a class="white-text gray-bg message-bg" href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <div class="row">
 
-                </div>
+                <a class="white-text black-bg twitter-bg" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a class="white-text gray-bg facebook-bg" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="white-text black-bg google-plus-bg" href="#"><i class="fa fa-google-plus"
+                        aria-hidden="true"></i></a>
+                <a class="white-text gray-bg message-bg" href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
 
             </div>
 
-        </section><!-- /.social-networks -->
+        </div>
+
+    </section><!-- /.social-networks -->

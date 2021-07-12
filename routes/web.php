@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\HomeDynamiquesController;
+<<<<<<< HEAD
 use App\Http\Controllers\PortfolioController;
 
+=======
+use App\Http\Controllers\HomeStaticsController;
+>>>>>>> 4507eca17c8ae683d2f93b2b61ffb05afef6ec22
 use App\Models\ContacDynamiques;
 use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
@@ -31,8 +35,7 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     $contacStatics = ContacStatics::all();
-    $contacdynamiques = ContacDynamiques::all();
-    return view('pages.contact', compact('contacStatics', 'contacdynamiques'));
+    return view('pages.contact', compact('contacStatics'));
 })->name('contact');
 
 
@@ -54,5 +57,10 @@ Route::get('/backoffice', function () {
 
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
+<<<<<<< HEAD
 Route::post('/portfolio',[PortfolioController ::class,'store']);
 Route::post('/portfolio',[PortfolioController ::class,'create']);
+=======
+Route::get('/static',[HomeStaticsController ::class,'create']);
+Route::post('/newstatic',[HomeStaticsController ::class,'store']);
+>>>>>>> 4507eca17c8ae683d2f93b2b61ffb05afef6ec22
