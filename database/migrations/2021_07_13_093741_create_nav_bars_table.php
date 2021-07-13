@@ -18,6 +18,7 @@ class CreateNavBarsTable extends Migration
             $table->string('lien1');
             $table->string('lien2');
             $table->string('lien3');
+            $table->string('lien4');
             $table->timestamps();
         });
     }

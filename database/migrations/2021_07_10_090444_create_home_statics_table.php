@@ -17,7 +17,7 @@ class CreateHomeStaticsTable extends Migration
             $table->id();
             $table->mediumText('titreHome');
             $table->mediumText('para1');
-            $table->mediumText('para2 ');
+            $table->mediumText('para2');
             $table->mediumText('img');
             $table->mediumText('sous_titre1');
             $table->mediumText('para3');

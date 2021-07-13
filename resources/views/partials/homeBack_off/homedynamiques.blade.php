@@ -7,6 +7,7 @@
                 <th scope="col">i1_service</th>
                 <th scope="col">h4_1_service</th>
                 <th scope="col">p1_service</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         @foreach ($homeDynamiques as $homeDynamique)
@@ -16,6 +17,15 @@
                     <td>{{ $homeDynamique->i1_service }}</td>
                     <td>{{ $homeDynamique->h4_1_service }}</td>
                     <td>{{ $homeDynamique->p1_service }}</td>
+                    <td>
+                        <form action="/dynamiques/{{$homeDynamique->id}}/delete" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger">
+                            Delete
+                        </button>
+                    </form>
+                    </td>
             </tbody>
         @endforeach
     </table>
