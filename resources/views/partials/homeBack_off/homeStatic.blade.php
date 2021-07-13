@@ -1,4 +1,4 @@
-
+{{--
 <section class="mt-5">
     <h1>Element statics</h1>
     <table class="table">
@@ -112,4 +112,4 @@
         </div>
 
     </div>
-</section>
+</section> --}}

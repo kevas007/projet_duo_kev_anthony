@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeDynamiquesController;
 use App\Http\Controllers\HomeStaticsController;
 use App\Models\ContacDynamiques;
-use App\Models\ContacStatics;
+ 
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
 use Illuminate\Support\Facades\Route;
