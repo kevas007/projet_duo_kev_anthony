@@ -8,6 +8,13 @@ use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
 use App\Models\Portfolios;
+use App\Models\PortofolioStatiques;
+use App\Models\Blog;
+use App\Models\BlogStatique
+;
+
+
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -38,12 +45,15 @@ Route::get('/contact', function () {
 
 Route::get('/portfolio', function () {
     $portfolios = Portfolios::all();
-    return view('pages.portfolio',compact('portfolios'));
+    $PortofolioS2 = PortofolioStatiques::all();
+    return view('pages.portfolio',compact('portfolios','PortofolioS2'));
 });
 
 
 Route::get('/blog', function () {
-    return view('pages.blog');
+    $blog = Blog::all();
+    $blog2 = BlogStatique::all();
+    return view('pages.blog',compact('blog',compact('blog2')));
 });
 
 Route::get('/backoffice', function () {
@@ -56,3 +66,9 @@ Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
 Route::post('/portfolio',[PortfolioController ::class,'store']);
 Route::post('/portfolio',[PortfolioController ::class,'create']);
+Route::post('/portfolio',[PortofolioStatiquesController ::class,'store']);
+Route::post('/portfolio',[PortofolioStatiquesController ::class,'create']);
+Route::post('/blog',[blogController ::class,'store']);
+Route::post('/blog',[blogController ::class,'create']);
+Route::post('/blog',[BlogStatiqueController ::class,'store']);
+Route::post('/blog',[BlogStatiqueController ::class,'create']);

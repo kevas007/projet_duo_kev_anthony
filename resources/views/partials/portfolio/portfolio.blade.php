@@ -5,7 +5,9 @@
     <section class="site-section-small portfolio">
 
         <div class="container">
-            <h1 class="section-title-big text-center">Portfolio</h1>
+            @foreach ( $PortofolioS2 as $PortofolioS )
+
+            <h1 class="section-title-big text-center">{{$PortofolioS->titre}}</h1>
         </div>
 
         <div class="container-fluid">
@@ -35,11 +37,11 @@
 
         <div class="container">
 
-            <p class="section-title-small white-text mb-50">Coming together is a beginning, keeping together is progress, working together is success.</p>
-            <a class="btn" href="#">Start Now</a>
+            <p class="section-title-small white-text mb-50">{{$PortofolioS->titre_section}}</p>
+            <a class="btn" href="#">{{$PortofolioS->titre_btn}}</a>
 
         </div>
-
+        @endforeach
     </section><!-- /.section-work-with-us -->
 
     <section class="social-networks">
