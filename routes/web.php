@@ -5,13 +5,9 @@ use App\Http\Controllers\HomeStaticsController;
 use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
-<<<<<<< HEAD
 use App\Models\Portfolios;
-
-=======
 use App\Models\navBar;
 use App\Models\footer;
->>>>>>> origin/kev
 use Illuminate\Support\Facades\Route;
 
 /*
