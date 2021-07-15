@@ -3,8 +3,8 @@
     <section class="site-section-small section-blog">
 
         <div class="container">
-@foreach ( $blog2 as $blogStatiques)
 
+  @foreach ( $blog2 as $blogStatiques)
 
             <div class="text-center">
 
@@ -12,6 +12,7 @@
                 <p class="section-text">{{$blogStatiques->blog_soutitre}}</p>
 
             </div>
+            @endforeach
 
             <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
@@ -38,11 +39,12 @@
                         </div><!-- /.post-content -->
 
                     </div><!-- /.blog-post -->
-
+   @endforeach
                 </div>
             </div>
         </div>
-        @endforeach
+
+
     </section><!-- /.section-blog -->
 
 

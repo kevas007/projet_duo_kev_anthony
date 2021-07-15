@@ -12,10 +12,7 @@ use App\Models\PortofolioStatiques;
 use App\Models\Blog;
 use App\Models\BlogStatique
 ;
-
-
-
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,16 +41,20 @@ Route::get('/contact', function () {
 
 
 Route::get('/portfolio', function () {
-    $portfolios = Portfolios::all();
+    $portfolios = DB::table('portfolios')
+    ->take(15)//put limite
+    ->get();// get the limit
     $PortofolioS2 = PortofolioStatiques::all();
     return view('pages.portfolio',compact('portfolios','PortofolioS2'));
 });
 
 
 Route::get('/blog', function () {
-    $blog = Blog::all();
+    $blog = DB::table('blogs')
+    ->take(4)
+    ->get();
     $blog2 = BlogStatique::all();
-    return view('pages.blog',compact('blog',compact('blog2')));
+    return view('pages.blog',compact('blog','blog2'));
 });
 
 Route::get('/backoffice', function () {
