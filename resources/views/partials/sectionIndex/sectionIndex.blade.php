@@ -71,7 +71,7 @@
                     <div class="service mt-5">
 
                         <div class="service-icon mt-5">
-                            <i class="{{ $homeDynamique->i1_service }}" aria-hidden="true"></i>
+                            {!! $homeDynamique->i1_service !!}
                         </div><!-- /.service-icon -->
                         <div class="service-content">
                             <h4 class="service-title">{{ $homeDynamique -> h4_1_service }}</h4>

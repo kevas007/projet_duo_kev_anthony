@@ -12,6 +12,7 @@ class FooterController extends Controller
         $store->i_1 = $request->i_1 ;
         $store->i_2 = $request->i_2 ;
         $store->i_3 = $request->i_3 ;
+        $store->i_4 = $request->i_4 ;
         $store->email = $request->email ;
         $store->titre1 = $request->titre1 ;
         $store->paragraphe = $request->paragraphe;
@@ -26,6 +27,7 @@ class FooterController extends Controller
         $store->titre4 = $request->titre4 ;
         $store->li_8= $request->li_8 ;
         $store->li_9 = $request->li_9 ;
+        $store->p = $request->p;
         $store->save();
         return redirect('/');
     }

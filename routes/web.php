@@ -25,8 +25,7 @@ Route::get('/', function () {
     $homeDynamiques =HomeDynamiques::all();
     $navs = navBar:: all();
     $footers = footer::all();
-
-    return view('/index', compact('homeStatics', "homeDynamiques", 'navs','footers'));
+    return view('index', compact('homeStatics', "homeDynamiques", 'navs','footers'));
 });
 
 Route::get('/contact', function () {

@@ -6,7 +6,7 @@
             <div class="row">
 
                 <a class="white-text black-bg twitter-bg" href="#">{!! $footer->i_1 !!}</a>
-                <a class="white-text gray-bg facebook-bg" href="#"><{!! $footer->i_2 !!}</a>
+                <a class="white-text gray-bg facebook-bg" href="#">{!! $footer->i_2 !!}</a>
                 <a class="white-text black-bg google-plus-bg" href="#">{!! $footer->i_3 !!}</a>
                 <a class="white-text gray-bg message-bg" href="#">{!! $footer->i_4 !!}</a>
 
@@ -38,7 +38,7 @@
                 <div class="col-md-3 col-xs-6">
 
                     <div class="mb-xs-20">
-                        <h4 class="small-title">{!! $footer->titre2 !!}</h4>
+                        <h4 class="small-title">{{$footer->titre2 }}</h4>
                         <ul class="list-unstyled">
                             <li>{!! $footer->li_1 !!}</li>
                             <li>{!! $footer->li_2 !!}</li>
@@ -51,7 +51,7 @@
                 <div class="col-md-3 col-xs-6">
 
                     <div class="mb-xs-20">
-                        <h4 class="small-title">{!! $footer->titre3 !!}</h4>
+                        <h4 class="small-title">{{ $footer->titre3 }}</h4>
                         <ul class="list-unstyled">
                             <li>{!! $footer->li_4 !!}</li>
                             <li>{!! $footer->li_5 !!}</li>
@@ -67,7 +67,7 @@
                         <h4 class="small-title">{{ $footer->titre4 }}</h4>
                         <ul class="list-unstyled">
                             <li>{!! $footer->li_7 !!}</li>
-                            <li>{{!!$footer->li_8 !!}</li>
+                            <li>{!!$footer->li_8 !!}</li>
                             <li>{!! $footer->li_9 !!}</li>
                         </ul>
                     </div>
@@ -79,7 +79,7 @@
         </div>
 
         <div class="copyright">
-            <p>&copy; 2017 BusinessPerfect | Made by <a href="http://milansavov.com/" class="yellow-text">Milan Savov</a></p>
+            <p>{!!$footer->p !!}</p>
         </div><!-- /.copyright -->
 
         @endforeach

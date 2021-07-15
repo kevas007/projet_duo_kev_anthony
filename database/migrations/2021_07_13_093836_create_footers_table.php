@@ -18,6 +18,7 @@ class CreateFootersTable extends Migration
             $table->string('i_1');
             $table->string('i_2');
             $table->string('i_3');
+            $table->string('i_4');
             $table->string('email');
             $table->string('titre1');
             $table->string('paragraphe');
@@ -33,6 +34,7 @@ class CreateFootersTable extends Migration
             $table->string('li_7');
             $table->string('li_8');
             $table->string('li_9');
+            $table->string('p');
             $table->timestamps();
         });
     }
