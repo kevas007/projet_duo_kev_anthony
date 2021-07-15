@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class HomeDynamiquesController extends Controller
 {
 
+
     public function create(){
         return view('indexBack');
     }
@@ -19,5 +20,10 @@ class HomeDynamiquesController extends Controller
         $store->p1_service = $request->p1_service;
         $store->save();
         return redirect('/');
+    }
+    public function destroy($id){
+        $destroy = HomeDynamiques::find($id);
+        $destroy->delete();
+        return redirect("/");
     }
 }

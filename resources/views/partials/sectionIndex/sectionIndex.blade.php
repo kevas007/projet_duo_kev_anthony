@@ -71,7 +71,7 @@
                     <div class="service mt-5">
 
                         <div class="service-icon mt-5">
-                            <i class="{{ $homeDynamique->i1_service }}" aria-hidden="true"></i>
+                            {!! $homeDynamique->i1_service !!}
                         </div><!-- /.service-icon -->
                         <div class="service-content">
                             <h4 class="service-title">{{ $homeDynamique -> h4_1_service }}</h4>
@@ -115,21 +115,3 @@
     </section><!-- /.section-work-with-us -->
 
     @endforeach
-
-    <section class="social-networks">
-
-        <div class="container-fluid">
-
-            <div class="row">
-
-                <a class="white-text black-bg twitter-bg" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a class="white-text gray-bg facebook-bg" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a class="white-text black-bg google-plus-bg" href="#"><i class="fa fa-google-plus"
-                        aria-hidden="true"></i></a>
-                <a class="white-text gray-bg message-bg" href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-
-            </div>
-
-        </div>
-
-    </section><!-- /.social-networks -->
