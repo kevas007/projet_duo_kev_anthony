@@ -13,11 +13,7 @@
             <div class="main-menu" id="perfect-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
-<<<<<<< HEAD
-                        <a href="/">Home</a></li>
-=======
                         <a href="/">{{ $nav-> lien1 }}</a></li>
->>>>>>> origin/kev
                     <li>
                         <a href="/blog">{{ $nav-> lien2 }} </a>
                     </li>

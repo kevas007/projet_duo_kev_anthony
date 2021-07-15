@@ -1,34 +1,36 @@
 <section class="mt-5 ml-3">
-    <h1>Element dynamiques</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">i1_service</th>
-                <th scope="col">h4_1_service</th>
-                <th scope="col">p1_service</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        @foreach ($homeDynamiques as $homeDynamique)
-            <tbody>
+    <div class="container">
+        <h1 class="mt-3 bg-grey">Element dynamiques</h1>
+        <table class="table">
+            <thead class="bg-grey">
                 <tr>
-                    <th scope="row">{{ $homeDynamique->id }}</th>
-                    <td>{{ $homeDynamique->i1_service }}</td>
-                    <td>{{ $homeDynamique->h4_1_service }}</td>
-                    <td>{{ $homeDynamique->p1_service }}</td>
-                    <td>
-                        <form action="/dynamiques/{{$homeDynamique->id}}/delete" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger">
-                            Delete
-                        </button>
-                    </form>
-                    </td>
-            </tbody>
-        @endforeach
-    </table>
+                    <th scope="col">#</th>
+                    <th scope="col">i1_service</th>
+                    <th scope="col">h4_1_service</th>
+                    <th scope="col">p1_service</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            @foreach ($homeDynamiques as $homeDynamique)
+                <tbody>
+                    <tr>
+                        <th scope="row">{{ $homeDynamique->id }}</th>
+                        <td>{{ $homeDynamique->i1_service }}</td>
+                        <td>{{ $homeDynamique->h4_1_service }}</td>
+                        <td>{{ $homeDynamique->p1_service }}</td>
+                        <td>
+                            <form action="/dynamiques/{{$homeDynamique->id}}/delete" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-danger">
+                                Delete
+                            </button>
+                        </form>
+                        </td>
+                </tbody>
+            @endforeach
+        </table>
+    </div>
 
 </section>
 
