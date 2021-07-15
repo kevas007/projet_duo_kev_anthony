@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFootersTable extends Migration
+class CreateContactTitreStaticsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateFootersTable extends Migration
      */
     public function up()
     {
-        Schema::create('footers', function (Blueprint $table) {
+        Schema::create('contact_titre_statics', function (Blueprint $table) {
             $table->id();
-
-            $table->string('pargraphe');
-
+            $table->mediumText('titreContact');
+            $table->mediumText('sous_titreContact');
+            $table->mediumText('paraContact');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateFootersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('footers');
+        Schema::dropIfExists('contact_titre_statics');
     }
 }

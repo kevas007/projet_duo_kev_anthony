@@ -2,11 +2,17 @@
 
 use App\Http\Controllers\HomeDynamiquesController;
 use App\Http\Controllers\HomeStaticsController;
+use App\Http\Controllers\TitreHomeStaticController;
 use App\Models\ContacStatics;
+use App\Models\ContactTitreStatic;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
 use App\Models\navBar;
 use App\Models\footer;
+use App\Models\IconeFooter;
+use App\Models\SectionHomeStatic;
+use App\Models\TitreHomeStatic;
+use App\Models\TitrePFooter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,3 +53,10 @@ Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
 Route::get('/static',[HomeStaticsController ::class,'create']);
 Route::post('/newstatic',[HomeStaticsController ::class,'store']);
 Route::delete("/dynamiques/{id}/delete", [HomeDynamiquesController::class, "destroy"]);
+
+Route::resource('titreHomeStatic',TitreHomeStaticController::class);
+
+Route::resource('titreHomeStatic',ContactTitreStatic::class);
+Route::resource('titreHomeStatic',IconeFooter::class);
+Route::resource('titreHomeStatic',TitrePFooter::class);
+Route::resource('titreHomeStatic',SectionHomeStatic::class);
