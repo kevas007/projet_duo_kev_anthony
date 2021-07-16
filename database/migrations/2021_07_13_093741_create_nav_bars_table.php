@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContacDynamiquesTable extends Migration
+class CreateNavBarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateContacDynamiquesTable extends Migration
      */
     public function up()
     {
-        Schema::create('contac_dynamiques', function (Blueprint $table) {
+        Schema::create('nav_bars', function (Blueprint $table) {
             $table->id();
-            $table->string('li_1_Contact');
-            $table->string('li_2_Contact');
-            $table->string('li_3_Contact');
+            $table->string('lien1');
+            $table->string('lien2');
+            $table->string('lien3');
+            $table->string('lien4');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateContacDynamiquesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contac_dynamiques');
+        Schema::dropIfExists('nav_bars');
     }
 }

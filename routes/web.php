@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeDynamiquesController;
-use App\Http\Controllers\PortfolioController;
-
-use App\Models\ContacDynamiques;
+use App\Http\Controllers\HomeStaticsController;
 use App\Models\ContacStatics;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
@@ -13,6 +11,8 @@ use App\Models\Blog;
 use App\Models\BlogStatique
 ;
 use Illuminate\Support\Facades\DB;
+use App\Models\navBar;
+use App\Models\footer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,18 +25,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//anthony
 Route::get('/', function () {
     $homeStatics = HomeStatics::all();
     $homeDynamiques =HomeDynamiques::all();
-
-    return view('/index', compact('homeStatics', "homeDynamiques"));
+    $navs = navBar:: all();
+    $footers = footer::all();
+    return view('index', compact('homeStatics', "homeDynamiques", 'navs','footers'));
 });
 
 Route::get('/contact', function () {
     $contacStatics = ContacStatics::all();
-    $contacdynamiques = ContacDynamiques::all();
-    return view('pages.contact', compact('contacStatics', 'contacdynamiques'));
+    $navs = navBar:: all();
+    $footers = footer::all();
+    return view('pages.contact', compact('contacStatics', 'navs','footers'));
 })->name('contact');
 
 
@@ -65,11 +67,6 @@ Route::get('/backoffice', function () {
 
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
-Route::post('/portfolio',[PortfolioController ::class,'store']);
-Route::post('/portfolio',[PortfolioController ::class,'create']);
-Route::post('/portfolio',[PortofolioStatiquesController ::class,'store']);
-Route::post('/portfolio',[PortofolioStatiquesController ::class,'create']);
-Route::post('/blog',[blogController ::class,'store']);
-Route::post('/blog',[blogController ::class,'create']);
-Route::post('/blog',[BlogStatiqueController ::class,'store']);
-Route::post('/blog',[BlogStatiqueController ::class,'create']);
+Route::get('/static',[HomeStaticsController ::class,'create']);
+Route::post('/newstatic',[HomeStaticsController ::class,'store']);
+Route::delete("/dynamiques/{id}/delete", [HomeDynamiquesController::class, "destroy"]);

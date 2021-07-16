@@ -18,11 +18,14 @@ class CreateHomeStaticsTable extends Migration
             $table->mediumText('titreHome');
             $table->mediumText('para1');
             $table->mediumText('para2');
+            $table->mediumText('img');
             $table->mediumText('sous_titre1');
             $table->mediumText('para3');
             $table->string('ahref');
             $table->mediumText('sous_titre2');
             $table->mediumText('para4');
+            $table->mediumText('para5');
+            $table->string('ahref2');
             $table->timestamps();
         });
     }

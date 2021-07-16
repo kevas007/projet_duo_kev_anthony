@@ -6,25 +6,26 @@
 
             <div class="navbar-header">
 
-                <a href="index.html" class="site-title yellow-text">Business Perfect</a>
+                <a href="index.html" class="site-title yellow-text">{{ env('APP_TITRE')}}</a>
 
             </div><!-- /.navbar-header -->
-
+            @foreach ($navs as $nav )
             <div class="main-menu" id="perfect-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active">
-                        <a href="index.html">Home</a></li>
+                        <a href="/">{{ $nav-> lien1 }}</a></li>
                     <li>
-                        <a href="blog.html">Blog </a>
+                        <a href="/blog">{{ $nav-> lien2 }} </a>
                     </li>
                     <li>
-                        <a href="portfolio.html">Portfolio</a>
+                        <a href="/portfolio">{{ $nav-> lien3 }}</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="/contact">{{ $nav-> lien4 }}</a>
                     </li>
                 </ul><!-- /.navbar-nav -->
             </div><!-- /.navbar-collapse -->
+            @endforeach
 
         </div>
 
