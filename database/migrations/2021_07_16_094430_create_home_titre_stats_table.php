@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTitrePFootersTable extends Migration
+class CreateHomeTitreStatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTitrePFootersTable extends Migration
      */
     public function up()
     {
-        Schema::create('titre_p_footers', function (Blueprint $table) {
+        Schema::create('home_titre_stats', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
             $table->string('titre');
-            $table->string('paragraphe');
+            $table->string('para');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateTitrePFootersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('titre_p_footers');
+        Schema::dropIfExists('home_titre_stats');
     }
 }

@@ -38,11 +38,11 @@
                 <div class="col-md-3 col-xs-6">
 
                     <div class="mb-xs-20">
-                        <h4 class="small-title">{{$footer->titre2 }}</h4>
+                        <h4 class="small-title">{{$footer->email }}</h4>
                         <ul class="list-unstyled">
-                            <li>{!! $footer->li_1 !!}</li>
-                            <li>{!! $footer->li_2 !!}</li>
-                            <li>{!! $footer->li_3 !!}</li>
+                            <li>{!! $footer->phone!!}</li>
+                            <li>{!! $footer->fax !!}</li>
+                            <li>{{  $footer->email  }}</li>
                         </ul>
                     </div>
 
@@ -53,9 +53,9 @@
                     <div class="mb-xs-20">
                         <h4 class="small-title">{{ $footer->titre3 }}</h4>
                         <ul class="list-unstyled">
-                            <li>{!! $footer->li_4 !!}</li>
-                            <li>{!! $footer->li_5 !!}</li>
-                            <li>{!! $footer->li_6 !!}</li>
+                            <li>{!! $footer->lien1 !!}</li>
+                            <li>{!! $footer->lien2 !!}</li>
+                            <li>{!! $footer->lien3 !!}</li>
                         </ul>
                     </div>
 
@@ -66,9 +66,9 @@
                     <div class="mb-xs-20">
                         <h4 class="small-title">{{ $footer->titre4 }}</h4>
                         <ul class="list-unstyled">
-                            <li>{!! $footer->li_7 !!}</li>
-                            <li>{!!$footer->li_8 !!}</li>
-                            <li>{!! $footer->li_9 !!}</li>
+                            <li>{{  $footer->name  }}</li>
+                            <li>{{ $footer->lieu  }}</li>
+                            <li>{{  $footer->path }}</li>
                         </ul>
                     </div>
 

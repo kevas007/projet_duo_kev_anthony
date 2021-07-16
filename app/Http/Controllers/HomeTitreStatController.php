@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TitrePFooter;
+use App\Models\HomeTitreStat;
+use App\Models\TitreHomeStatic;
 use Illuminate\Http\Request;
 
-class TitrePFooterController extends Controller
+class HomeTitreStatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +25,7 @@ class TitrePFooterController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -35,21 +36,20 @@ class TitrePFooterController extends Controller
      */
     public function store(Request $request)
     {
-        $store = new TitrePFooter;
-        $store->email = $request->email;
-        $store->titre = $request->titre;
-        $store->paragraphe = $request->paragraphe;
-        $store->save;
+        $store = new TitreHomeStatic;
+        $store ->titre = $request->titre;
+        $store ->para = $request->para;
+        $store->save();
         return redirect('/');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TitrePFooter  $titrePFooter
+     * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function show(TitrePFooter $titrePFooter)
+    public function show(HomeTitreStat $homeTitreStat)
     {
         //
     }
@@ -57,10 +57,10 @@ class TitrePFooterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TitrePFooter  $titrePFooter
+     * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function edit(TitrePFooter $titrePFooter)
+    public function edit(HomeTitreStat $homeTitreStat)
     {
         //
     }
@@ -69,10 +69,10 @@ class TitrePFooterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TitrePFooter  $titrePFooter
+     * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TitrePFooter $titrePFooter)
+    public function update(Request $request, HomeTitreStat $homeTitreStat)
     {
         //
     }
@@ -80,10 +80,10 @@ class TitrePFooterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TitrePFooter  $titrePFooter
+     * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TitrePFooter $titrePFooter)
+    public function destroy(HomeTitreStat $homeTitreStat)
     {
         //
     }

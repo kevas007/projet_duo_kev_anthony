@@ -9,6 +9,7 @@ use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
 use App\Models\navBar;
 use App\Models\footer;
+use App\Models\HomeTitreStat;
 use App\Models\IconeFooter;
 use App\Models\SectionHomeStatic;
 use App\Models\TitreHomeStatic;
@@ -31,7 +32,9 @@ Route::get('/', function () {
     $homeDynamiques =HomeDynamiques::all();
     $navs = navBar:: all();
     $footers = footer::all();
-    return view('index', compact('homeStatics', "homeDynamiques", 'navs','footers'));
+    $homeTitreStats= HomeTitreStat::all();
+    $sectionHomeStatics= SectionHomeStatic::all();
+    return view('index', compact('homeStatics', "homeDynamiques", 'navs','footers',"sectionHomeStatics","homeTitreStats"));
 });
 
 Route::get('/contact', function () {
@@ -45,6 +48,7 @@ Route::get('/contact', function () {
 Route::get('/backoffice', function () {
     $homeStatics = HomeStatics::all();
     $homeDynamiques =HomeDynamiques::all();
+
     return view('indexBack', compact('homeStatics', "homeDynamiques"));
 });
 
@@ -56,7 +60,8 @@ Route::delete("/dynamiques/{id}/delete", [HomeDynamiquesController::class, "dest
 
 Route::resource('titreHomeStatic',TitreHomeStaticController::class);
 
-Route::resource('titreHomeStatic',ContactTitreStatic::class);
-Route::resource('titreHomeStatic',IconeFooter::class);
-Route::resource('titreHomeStatic',TitrePFooter::class);
-Route::resource('titreHomeStatic',SectionHomeStatic::class);
+Route::resource('ContactTitreStatic',ContactTitreStaticController::class);
+Route::resource('IconeFooter',IconeFooterController::class);
+Route::resource('TitrePFooter',TitrePFooterController::class);
+Route::resource('TitreHomeStatic',SectionHomeStaticController::class);
+Route::resource('HomeTitreStat',HomeTitreStatController::class);
