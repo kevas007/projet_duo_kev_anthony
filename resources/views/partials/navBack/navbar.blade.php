@@ -11,10 +11,10 @@
                     <a class="nav-link active text-light" aria-current="page" href="/backoffice">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Blog</a>
+                    <a class="nav-link text-light" href="/backoffice/blog">Blog</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-light" href="#">Portfolio</a>
+                    <a class="nav-link text-light" href="/backoffice/portfolio">Portfolio</a>
                 </li>
             </ul>
         </div>

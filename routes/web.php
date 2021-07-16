@@ -47,7 +47,8 @@ Route::get('/contact', function () {
     $contacStatics = ContacStatics::all();
     $navs = navBar:: all();
     $footers = footer::all();
-    return view('pages.contact', compact('contacStatics', 'navs','footers'));
+    $contacts = ContactTitreStatic::all();
+    return view('pages.contact', compact('contacStatics', 'navs','footers','contacts'));
 })->name('contact');
 
 
@@ -79,7 +80,7 @@ Route::get('/backoffice/portfolio', function () {
     $portfolios = Portfolios::all();
     $portfolios2 = PortofolioStatiques::all();
 
-   return view('pages.backOffice.portfolioBack',compact("portfolios","portfolios2"));
+    return view('pages.backOffice.portfolioBack',compact("portfolios","portfolios2"));
 });
 
 

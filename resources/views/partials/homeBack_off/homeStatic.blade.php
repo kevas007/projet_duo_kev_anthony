@@ -1,4 +1,4 @@
-{{--
+
 <section class="mt-5">
     <h1>Element statics</h1>
     <table class="table">
@@ -38,7 +38,7 @@
     </table>
 
 </section>
-
+{{--
 <section class="mt-5">
     <div class="container">
         <div class="row">
