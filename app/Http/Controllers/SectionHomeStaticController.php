@@ -24,7 +24,7 @@ class SectionHomeStaticController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.backOffice.homeStatic');
     }
 
     /**
@@ -50,9 +50,10 @@ class SectionHomeStaticController extends Controller
      * @param  \App\Models\SectionHomeStatic  $sectionHomeStatic
      * @return \Illuminate\Http\Response
      */
-    public function show(SectionHomeStatic $sectionHomeStatic)
+    public function show( $id)
     {
-        //
+        $show =SectionHomeStatic::find($id);
+        return view('pages.backOffice.staticHomeShow.show', compact('show'));
     }
 
     /**
@@ -61,9 +62,10 @@ class SectionHomeStaticController extends Controller
      * @param  \App\Models\SectionHomeStatic  $sectionHomeStatic
      * @return \Illuminate\Http\Response
      */
-    public function edit(SectionHomeStatic $sectionHomeStatic)
+    public function edit($id)
     {
-        //
+        $edit = SectionHomeStatic::find($id);
+        return view('pages.backOffice.editsta.edit',compact('edit'));
     }
 
     /**
@@ -73,9 +75,15 @@ class SectionHomeStaticController extends Controller
      * @param  \App\Models\SectionHomeStatic  $sectionHomeStatic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SectionHomeStatic $sectionHomeStatic)
+    public function update($id,Request $request)
     {
-        //
+        $update = SectionHomeStatic ::find($id);
+        $update->image = $request->image;
+        $update->titre = $request->titre;
+        $update->para = $request->para;
+        $update->lien = $request->lien;
+        $update->save();
+        return redirect('/backoffice');
     }
 
     /**
@@ -84,8 +92,10 @@ class SectionHomeStaticController extends Controller
      * @param  \App\Models\SectionHomeStatic  $sectionHomeStatic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SectionHomeStatic $sectionHomeStatic)
+    public function destroy($id)
     {
-        //
+        $destroy = SectionHomeStatic ::find($id);
+        $destroy->delete();
+        return redirect("/");
     }
 }

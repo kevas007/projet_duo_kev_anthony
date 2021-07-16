@@ -72,8 +72,10 @@ Route::get('/blog', function () {
 Route::get('/backoffice', function () {
     $homeStatics = HomeStatics::all();
     $homeDynamiques =HomeDynamiques::all();
+    $homeTitreStats= HomeTitreStat::all();
+    $sectionHomeStatics= SectionHomeStatic::all();
 
-    return view('indexBack', compact('homeStatics', "homeDynamiques"));
+    return view('indexBack', compact('homeStatics', "homeDynamiques","homeTitreStats","sectionHomeStatics"));
 });
 
 Route::get('/backoffice/portfolio', function () {
@@ -87,8 +89,19 @@ Route::get('/backoffice/portfolio', function () {
 Route::get('/backoffice/blog', function () {
     $blogs = Blog::all();
     $blog2 = BlogStatique::all();
-   return view('pages.backOffice.blogBack',compact("blogs","blog2"));
+    return view('pages.backOffice.blogBack',compact("blogs","blog2"));
 });
+
+Route::get('/dynamiques/{id}/show', [HomeStaticsController::class, 'show']);
+Route::get('/dynamique/{id}/edit', [HomeDynamiquesController::class, 'edit']);
+Route::put('/dynamique/{id}/update', [HomeDynamiquesController::class, 'update']);
+
+Route::get('/homeStatic/{id}/show', [HomeStaticsController::class, 'show']);
+Route::get('/homeStatic/{id}/edit', [HomeStaticsController::class, 'edit']);
+Route::put('/homeStatic/{id}/update', [HomeStaticsController::class, 'update']);
+
+Route::get('/homeStatics',[homeStaticsController ::class,'create']);
+Route::post('/homeStatics',[homeStaticsController ::class,'store']);
 
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);

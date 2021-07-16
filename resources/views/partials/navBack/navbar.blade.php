@@ -16,6 +16,12 @@
                 <li class="nav-item ">
                     <a class="nav-link text-light" href="/backoffice/portfolio">Portfolio</a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-light" href="/backoffice/conatct">Portfolio</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link text-light" href="/">Home</a>
+                </li>
             </ul>
         </div>
     </div>
