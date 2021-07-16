@@ -5,21 +5,21 @@
             <thead class="bg-grey">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">i1_service</th>
-                    <th scope="col">h4_1_service</th>
-                    <th scope="col">p1_service</th>
+                    <th scope="col">titre portofolio</th>
+                    <th scope="col">paragraphe portofolio</th>
+                    <th scope="col">image</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
-            @foreach ($homeDynamiques as $homeDynamique)
+            @foreach ($portfolios as $portfolio)
                 <tbody>
                     <tr>
-                        <th scope="row">{{ $homeDynamique->id }}</th>
-                        <td>{{ $homeDynamique->i1_service }}</td>
-                        <td>{{ $homeDynamique->h4_1_service }}</td>
-                        <td>{{ $homeDynamique->p1_service }}</td>
+                        <th scope="row">{{ $portfolio->id }}</th>
+                        <td>{{ $portfolio->titre }}</td>
+                        <td>{{ $portfolio->paragraphe }}</td>
+                        <td>{{ $portfolio->img }}</td>
                         <td>
-                            <form action="/dynamiques/{{$homeDynamique->id}}/delete" method="POST">
+                            <form action="/dynamiques/{{$portfolio->id}}/delete" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger">
@@ -60,5 +60,3 @@
 
     </div>
 </section>
-
-
