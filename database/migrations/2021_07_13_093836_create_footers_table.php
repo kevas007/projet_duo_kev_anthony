@@ -15,26 +15,22 @@ class CreateFootersTable extends Migration
     {
         Schema::create('footers', function (Blueprint $table) {
             $table->id();
-            $table->string('i_1');
-            $table->string('i_2');
-            $table->string('i_3');
-            $table->string('i_4');
-            $table->string('email');
+
             $table->string('titre1');
             $table->string('paragraphe');
             $table->string('titre2');
-            $table->string('li_1');
-            $table->string('li_2');
-            $table->string('li_3');
+            $table->string('phone');
+            $table->string('fax');
+            $table->string('email');
             $table->string('titre3');
-            $table->string('li_4');
-            $table->string('li_5');
-            $table->string('li_6');
+            $table->string('lien1');
+            $table->string('lien2');
+            $table->string('lien3');
             $table->string('titre4');
-            $table->string('li_7');
-            $table->string('li_8');
-            $table->string('li_9');
-            $table->string('p');
+            $table->string('name');
+            $table->string('lieu');
+            $table->string('path');
+
             $table->timestamps();
         });
     }

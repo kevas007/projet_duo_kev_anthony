@@ -15,9 +15,6 @@ class CreateContacStaticsTable extends Migration
     {
         Schema::create('contac_statics', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('titreContact');
-            $table->mediumText('sous_titreContact');
-            $table->mediumText('paraContact');
             $table->mediumText('name');
             $table->mediumText('phone');
             $table->mediumText('fax');
