@@ -65,6 +65,20 @@ Route::get('/backoffice', function () {
     return view('indexBack', compact('homeStatics', "homeDynamiques"));
 });
 
+Route::get('/backoffice/portfolio', function () {
+    $portfolios = Portfolios::all();
+    $portfolios2 = PortofolioStatiques::all();
+
+   return view('pages.backOffice.portfolioBack',compact("portfolios","portfolios2"));
+});
+
+
+Route::get('/backoffice/blog', function () {
+    $blogs = Blog::all();
+    $blog2 = BlogStatique::all();
+   return view('pages.backOffice.blogBack',compact("blogs","blog2"));
+});
+
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);
 Route::post('/newdynamiques',[HomeDynamiquesController ::class,'store']);
 Route::get('/static',[HomeStaticsController ::class,'create']);
