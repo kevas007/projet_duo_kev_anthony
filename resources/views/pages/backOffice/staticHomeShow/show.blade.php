@@ -1,15 +1,20 @@
 @extends('template.back')
 
 @section('body')
-<section>
-    <div class="container">
-        <h1>{{$show->id}}</h1>
-        <h1>{{$show->titre}}</h1>
-        <h1>{{$show->para}}</h1>
-        <h1>{{$show->lein}}</h1>
+    <section>
+        <div class="container">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    {{ $show->id }}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ $show->titre }}</li>
+                    <li class="list-group-item">{{ $show->para }}</li>
+                    <li class="list-group-item">{{ $show->lein }}</li>
+                </ul>
+                <a class="btn btn-success text-white" href="/homeStatic/{{ $show->id }}/edit">EDIT</a>
+            </div>
 
-        <a class="btn btn-success text-white" href="/homeStatic/{{$show->id}}/edit">EDIT</a>
-    </div>
-</section>
+        </div>
+    </section>
 @endsection
-

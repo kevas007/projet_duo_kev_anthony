@@ -101,10 +101,11 @@
                     @endforeach
                 </div>
 
-
-
-
             </div>
+
+            @foreach ($icones as $icone)
+
+            @endforeach
 
     </section><!-- /.section-services -->
 

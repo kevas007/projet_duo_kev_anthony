@@ -17,10 +17,10 @@
                     <a class="nav-link text-light" href="/backoffice/portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-light" href="/backoffice/conatct">Portfolio</a>
+                    <a class="nav-link text-light" href="/backoffice/contact">Contact</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-light" href="/">Home</a>
+                    <a class="nav-link text-light" href="/">HomeSite</a>
                 </li>
             </ul>
         </div>

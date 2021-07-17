@@ -25,8 +25,8 @@
 
                         <div class="get-in-touch">
 
-                            <h2 class="section-title">{{ $contacStatic->sous_titreContact }}</h2>
-                            <p class="small-title mb-50"> {{ $contacStatic->paraContact }} </p>
+                            <h2 class="section-title">{{ $contacts[0] ->sous_titreContact }}</h2>
+                            <p class="small-title mb-50"> {{ $contacts[0] ->paraContact }} </p>
 
                             <ul class="list-unstyled mb-0">
                                 <li>{{ $contacStatic-> name }} </li>
