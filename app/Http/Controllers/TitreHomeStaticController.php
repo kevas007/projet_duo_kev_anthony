@@ -51,7 +51,7 @@ class TitreHomeStaticController extends Controller
     public function show($id)
     {
             $show = TitreHomeStatic::find($id);
-        return view('pages.backOffice.shomeHome2.show', compact('show'));
+        return view('pages.backOffice.shomeHome2.show2', compact('show'));
     }
 
     /**

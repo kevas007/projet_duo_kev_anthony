@@ -94,8 +94,9 @@ Route::get('/backoffice/portfolio', function () {
 
 
 Route::get('/backoffice/contact', function () {
+    $icones = IconeFooter::all();
     $titres=ContactTitreStatic::all();
-    return view('pages.backOffice.contactBack', compact("titres"));
+    return view('pages.backOffice.contactBack', compact("titres", 'icones'));
 });
 
 
