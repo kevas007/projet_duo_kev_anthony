@@ -8,6 +8,11 @@ use App\Models\ContactTitreStatic;
 use App\Models\HomeDynamiques;
 use App\Models\HomeStatics;
 use App\Models\Portfolios;
+use App\Models\PortofolioStatiques;
+use App\Models\Blog;
+use App\Models\BlogStatique
+;
+use Illuminate\Support\Facades\DB;
 use App\Models\navBar;
 use App\Models\footer;
 use App\Models\HomeTitreStat;
@@ -47,13 +52,20 @@ Route::get('/contact', function () {
 
 
 Route::get('/portfolio', function () {
-    $portfolios = Portfolios::all();
-    return view('pages.portfolio',compact('portfolios'));
+    $portfolios = DB::table('portfolios')
+    ->take(15)//put limite
+    ->get();// get the limit
+    $PortofolioS2 = PortofolioStatiques::all();
+    return view('pages.portfolio',compact('portfolios','PortofolioS2'));
 });
 
 
 Route::get('/blog', function () {
-    return view('pages.blog');
+    $blog = DB::table('blogs')
+    ->take(4)
+    ->get();
+    $blog2 = BlogStatique::all();
+    return view('pages.blog',compact('blog','blog2'));
 });
 
 Route::get('/backoffice', function () {
@@ -61,6 +73,20 @@ Route::get('/backoffice', function () {
     $homeDynamiques =HomeDynamiques::all();
 
     return view('indexBack', compact('homeStatics', "homeDynamiques"));
+});
+
+Route::get('/backoffice/portfolio', function () {
+    $portfolios = Portfolios::all();
+    $portfolios2 = PortofolioStatiques::all();
+
+   return view('pages.backOffice.portfolioBack',compact("portfolios","portfolios2"));
+});
+
+
+Route::get('/backoffice/blog', function () {
+    $blogs = Blog::all();
+    $blog2 = BlogStatique::all();
+   return view('pages.backOffice.blogBack',compact("blogs","blog2"));
 });
 
 Route::get('/dynamiques',[HomeDynamiquesController ::class,'create']);

@@ -9,12 +9,13 @@ class portfolioController extends Controller
 {
 
     public function create(){
-        return view('page.portfolio');
+        return view('pages.portfolio');
     }
     public function store(Request $request){
         $store = new Portfolios;
-        $store->titre_image = $request->titre_image;
-        $store->para = $request->para;
+        $store->titre = $request->titre;
+        $store->paragraphe = $request->paragraphe;
+        $store->img = $request->img;
         $store->save();
         return redirect('/pages.backOffice.homeStatic');
     }

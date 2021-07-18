@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Portfolios extends Migration
+class CreateBlogStatiquesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Portfolios extends Migration
      */
     public function up()
     {
-
-        Schema::create('portfolios', function (Blueprint $table) {
+        Schema::create('blog_statiques', function (Blueprint $table) {
             $table->id();
-            $table->string('titre_image');
-            $table->string('para');
+            $table->string('blog_titre');
+            $table->string('blog_soutitre');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class Portfolios extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('blog_statiques');
     }
 }
