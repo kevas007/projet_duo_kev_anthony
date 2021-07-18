@@ -14,18 +14,21 @@
             @foreach ($portfolios as $portfolio)
                 <tbody>
                     <tr>
-                        <th scope="row">{{ $portfolio->id }}</th>
-                        <td>{{ $portfolio->titre }}</td>
-                        <td>{{ $portfolio->paragraphe }}</td>
-                        <td>{{ $portfolio->img }}</td>
+                        <th scope="row">{{$portfolio->id}}</th>
+                        <td>{{$portfolio->titre}}</td>
+                        <td>{{$portfolio->paragraphe}}</td>
+                        <td>{{$portfolio->img}}</td>
                         <td>
-                            <form action="/dynamiques/{{$portfolio->id}}/delete" method="POST">
+                            <form action="/portfolio/{{$portfolio->id}}/delete" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger">
                                 Delete
                             </button>
                         </form>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary text-white" href="/portfolio/{{$portfolio->id}}/show">SHOW</a>
                         </td>
                 </tbody>
             @endforeach

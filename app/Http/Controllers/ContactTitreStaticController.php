@@ -24,7 +24,7 @@ class ContactTitreStaticController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.backOffice.contactBack');
     }
 
     /**
@@ -49,9 +49,10 @@ class ContactTitreStaticController extends Controller
      * @param  \App\Models\ContactTitreStatic  $contactTitreStatic
      * @return \Illuminate\Http\Response
      */
-    public function show(ContactTitreStatic $contactTitreStatic)
+    public function show($id)
     {
-        //
+        $show = ContactTitreStatic::find($id);
+        return view('pages.backOffice.showHome.show4', compact('show'));
     }
 
     /**
@@ -60,9 +61,10 @@ class ContactTitreStaticController extends Controller
      * @param  \App\Models\ContactTitreStatic  $contactTitreStatic
      * @return \Illuminate\Http\Response
      */
-    public function edit(ContactTitreStatic $contactTitreStatic)
+    public function edit( $id)
     {
-        //
+        $edit = ContactTitreStatic::find($id);
+        return view('pages.backOffice.editsta.edit6',compact('edit'));
     }
 
     /**
@@ -72,9 +74,14 @@ class ContactTitreStaticController extends Controller
      * @param  \App\Models\ContactTitreStatic  $contactTitreStatic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ContactTitreStatic $contactTitreStatic)
+    public function update($id,Request $request)
     {
-        //
+        $update = ContactTitreStatic ::find($id);
+        $update->titreContact = $request->titreContact;
+        $update->sous_titreContact = $request->sous_titreContact;
+        $update->paraContact = $request->paraContact;
+        $update->save();
+        return redirect('/backoffice/contact');
     }
 
     /**
@@ -83,8 +90,10 @@ class ContactTitreStaticController extends Controller
      * @param  \App\Models\ContactTitreStatic  $contactTitreStatic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ContactTitreStatic $contactTitreStatic)
+    public function destroy( $id)
     {
-        //
+        $destroy = ContactTitreStatic ::find($id);
+        $destroy->delete();
+        return redirect("/");
     }
 }
