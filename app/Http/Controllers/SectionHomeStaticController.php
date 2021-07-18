@@ -53,7 +53,7 @@ class SectionHomeStaticController extends Controller
     public function show( $id)
     {
         $show =SectionHomeStatic::find($id);
-        return view('pages.backOffice.staticHomeShow.show', compact('show'));
+        return view('pages.backOffice.showHome.show2', compact('show'));
     }
 
     /**
@@ -65,7 +65,7 @@ class SectionHomeStaticController extends Controller
     public function edit($id)
     {
         $edit = SectionHomeStatic::find($id);
-        return view('pages.backOffice.editsta.edit',compact('edit'));
+        return view('pages.backOffice.editsta.edit4',compact('edit'));
     }
 
     /**

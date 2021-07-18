@@ -1,5 +1,5 @@
 <section>
-    <div class="container">
+    <div class="container mt-5">
         <form action="/titre/{{$edit->id}}/update" method="POST">
             @csrf
             @method('PUT')

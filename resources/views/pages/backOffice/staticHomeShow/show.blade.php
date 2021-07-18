@@ -1,5 +1,6 @@
 @extends('template.back')
 
+
 @section('body')
     <section>
         <div class="container">

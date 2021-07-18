@@ -21,9 +21,9 @@
                         <td>{{ $icone->i_2}}</td>
                         <td>{{ $icone->i_3 }}</td>
                         <td>{{ $icone->i_4 }}</td>
-                        <td><a class="btn btn-primary text-white" href="/dynamiques/{{$icone->id}}/show">SHOW</a></td>
+                        <td><a class="btn btn-primary text-white" href="/icone/{{$icone->id}}/show">SHOW</a></td>
                         <td>
-                            <form action="/dynamiques/{{$icone->id}}/delete" method="POST">
+                            <form action="/icone/{{$icone->id}}/delete" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger">

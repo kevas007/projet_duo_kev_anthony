@@ -4,6 +4,8 @@ use App\Http\Controllers\ContactTitreStaticController;
 use App\Http\Controllers\HomeDynamiquesController;
 use App\Http\Controllers\HomeStaticsController;
 use App\Http\Controllers\HomeTitreStatController;
+use App\Http\Controllers\IconeFooterController;
+use App\Http\Controllers\SectionHomeStaticController;
 use App\Http\Controllers\TitreHomeStaticController;
 use App\Models\ContacStatics;
 use App\Models\ContactTitreStatic;
@@ -125,12 +127,26 @@ Route::get('/titreStatic',[HomeTitreStatController::class,'create']);
 Route::post('/titreStatic',[HomeTitreStatController::class,'store']);
 Route::delete("/titreStatic/{id}/delete", [HomeTitreStatController::class, "destroy"]);
 
+Route::get('/SectionHome/{id}/show', [SectionHomeStaticController::class, 'show']);
+Route::get('/SectionHome/{id}/edit', [SectionHomeStaticController::class, 'edit']);
+Route::put('/SectionHome/{id}/update', [SectionHomeStaticController::class, 'update']);
+Route::get('/SectionHome',[SectionHomeStaticController::class,'create']);
+Route::post('/SectionHome',[SectionHomeStaticController::class,'store']);
+Route::delete("/SectionHome/{id}/delete", [SectionHomeStaticController::class, "destroy"]);
+
 Route::get('/titre/{id}/show', [TitreHomeStaticController::class, 'show']);
 Route::get('/titre/{id}/edit', [TitreHomeStaticController::class, 'edit']);
 Route::put('/titre/{id}/update', [TitreHomeStaticController::class, 'update']);
 Route::get('/titre',[TitreHomeStaticController::class,'create']);
 Route::post('/titre',[TitreHomeStaticController::class,'store']);
 Route::delete("/titre/{id}/delete", [TitreHomeStaticController::class, "destroy"]);
+
+Route::get('/icone/{id}/show', [IconeFooterController::class, 'show']);
+Route::get('/icone/{id}/edit', [IconeFooterController::class, 'edit']);
+Route::put('/icone/{id}/update', [IconeFooterController::class, 'update']);
+Route::get('/icone',[IconeFooterController::class,'create']);
+Route::post('/icone',[IconeFooterController::class,'store']);
+Route::delete("/icone/{id}/delete", [IconeFooterController::class, "destroy"]);
 
 Route::get('/static',[HomeStaticsController ::class,'create']);
 Route::post('/newstatic',[HomeStaticsController ::class,'store']);

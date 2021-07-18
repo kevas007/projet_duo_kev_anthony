@@ -24,7 +24,7 @@ class IconeFooterController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.backOffice.contactBack');
     }
 
     /**
@@ -50,9 +50,12 @@ class IconeFooterController extends Controller
      * @param  \App\Models\IconeFooter  $iconeFooter
      * @return \Illuminate\Http\Response
      */
-    public function show(IconeFooter $iconeFooter)
+    public function show($id)
     {
-        //
+        $show =IconeFooter::find($id);
+        return view('pages.backOffice.showHome.show3', compact('show'));
+
+
     }
 
     /**
@@ -61,9 +64,10 @@ class IconeFooterController extends Controller
      * @param  \App\Models\IconeFooter  $iconeFooter
      * @return \Illuminate\Http\Response
      */
-    public function edit(IconeFooter $iconeFooter)
+    public function edit($id)
     {
-        //
+        $edit = IconeFooter::find($id);
+        return view('pages.backOffice.editsta.edit5',compact('edit'));
     }
 
     /**
@@ -73,9 +77,15 @@ class IconeFooterController extends Controller
      * @param  \App\Models\IconeFooter  $iconeFooter
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, IconeFooter $iconeFooter)
+    public function update($id,Request $request)
     {
-        //
+        $update =  IconeFooter::find($id);
+        $update->i_1 = $request->i_1 ;
+        $update->i_2 = $request->i_2;
+        $update->i_3 = $request->i_3;
+        $update->i_4= $request->i_4;
+        $update->save();
+        return redirect('/backoffice/contact');
     }
 
     /**
@@ -84,8 +94,10 @@ class IconeFooterController extends Controller
      * @param  \App\Models\IconeFooter  $iconeFooter
      * @return \Illuminate\Http\Response
      */
-    public function destroy(IconeFooter $iconeFooter)
+    public function destroy($id)
     {
-        //
+        $destroy = IconeFooter::find($id);
+        $destroy->delete();
+        return redirect("/");
     }
 }
