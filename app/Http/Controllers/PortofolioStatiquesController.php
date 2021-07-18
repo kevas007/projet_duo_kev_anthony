@@ -18,4 +18,26 @@ class PortofolioStatiquesController extends Controller
         $store->save();
         return redirect('/');
     }
+    public function edit($id){
+        $edit = PortofolioStatiques::find($id);
+        return view('pages.backOffice.editPortfolio.porfolioStatique',compact('edit'));
+    }
+    public function destroy($id){
+        $destroy = PortofolioStatiques::find($id);
+        $destroy->delete();
+        return redirect("/");
+    }
+    public function update($id, Request $request){
+        $update = PortofolioStatiques::find($id);
+        $update->titre = $request->titre;
+        $update->para = $request->titre_section;
+        $update->lein = $request->titre_btn;
+        $update->save();
+        return redirect('/backoffice');
+    }
+    public function show($id)
+    {
+        $show =PortofolioStatiques::find($id);
+        return view('pages.backOffice.showPortfolio.showStatique', compact('show'));
+    }
 }

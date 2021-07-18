@@ -18,8 +18,10 @@
                         <td>{{ $blog->blog_image }}</td>
                         <td>{{ $blog->blog_titre }}</td>
                         <td>{{ $blog->blog_paragraphe }}</td>
+                        <td><a class="btn btn-primary text-white" href="/blog/{{ $blog->id }}/show">SHOW</a>
+                        </td>
                         <td>
-                            <form action="/dynamiques/{{$blog->id}}/delete" method="POST">
+                            <form action="/blog/{{$blog->id}}/delete" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger">
@@ -37,23 +39,25 @@
 <section class="mt-5 mb-3" >
     <div class="container">
         <div class="row">
-            <form method="post" action="/newdynamiques">
+            <form method="post" action="/blogRedirection">
                 @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Titre1</label>
-                            <input type="text" name="i1_service" class="form-control " id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">blog titre</label>
+                            <input type="text" name="blog_image" class="form-control " id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Para1</label>
-                            <input type="text" name="h4_1_service" class="form-control" id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">blog soutitre</label>
+                            <input type="text" name="blog_titre" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
+
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Titre2</label>
-                            <input type="text" name="p1_service" class="form-control" id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">blog paragraphe</label>
+                            <input type="text" name="blog_paragraphe" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
+
                 <button type="submit" class="btn btn-primary  text-white" >Submit</button>
             </form>
         </div>

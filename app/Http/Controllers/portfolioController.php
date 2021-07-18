@@ -23,7 +23,7 @@ class portfolioController extends Controller
         $store->paragraphe = $request->paragraphe;
         $store->img = $request->img;
         $store->save();
-        return redirect('/pages.backOffice.homeStatic');
+        return redirect('/pages.backOffice.portfolio');
     }
     public function update($id, Request $request){
         $update = Portfolios::find($id);
@@ -35,7 +35,7 @@ class portfolioController extends Controller
     }
     public function show($id){
         $show = Portfolios::find($id);
-        return view('pages.backOffice.showPortfolio.show',compact('show'));
+        return view('backoffice.showPortfolio.show',compact('show'));
     }
     public function destroy($id){
         $destroy = Portfolios::find($id);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContacStaticsController;
 use App\Http\Controllers\ContactTitreStaticController;
 use App\Http\Controllers\HomeDynamiquesController;
@@ -8,7 +9,9 @@ use App\Http\Controllers\HomeStaticsController;
 use App\Http\Controllers\HomeTitreStatController;
 use App\Http\Controllers\IconeFooterController;
 use App\Http\Controllers\SectionHomeStaticController;
+use App\Http\Controllers\PortofolioStatiquesController;
 use App\Http\Controllers\TitreHomeStaticController;
+use App\Http\Controllers\BlogStatiqueController;
 use App\Models\ContacStatics;
 use App\Models\ContactTitreStatic;
 use App\Models\HomeDynamiques;
@@ -65,9 +68,11 @@ Route::get('/portfolio', function () {
     ->take(15)//put limite
     ->get();// get the limit
     $navs = navBar:: all();
+    $icones = IconeFooter::all();
+
     $footers = footer::all();
     $PortofolioS2 = PortofolioStatiques::all();
-    return view('pages.portfolio',compact('portfolios','PortofolioS2','navs','footers'));
+    return view('pages.portfolio',compact('portfolios','PortofolioS2','navs','icones','footers'));
 });
 
 
@@ -79,7 +84,7 @@ Route::get('/blog', function () {
     $footers = footer::all();
     $icones = IconeFooter::all();
     $blog2 = BlogStatique::all();
-    return view('pages.blog',compact('blog','blog2',"icones",));
+    return view('pages.blog',compact('blog','blog2',"icones",'navs','footers'));
 });
 
 Route::get('/backoffice', function () {
@@ -179,6 +184,22 @@ Route::delete("/portfolio/{id}/delete", [portfolioController::class, "destroy"])
 Route::get("/portfolio/{id}/show", [portfolioController::class, "show"]);
 Route::put('/portfolio/{id}/update', [portfolioController::class, 'update']);
 Route::get('/portfolio/{id}/edit', [portfolioController::class, 'edit']);
+Route::post('/porto',[portfolioController::class,'store']);
 
 
+Route::delete("/portfolioStatic/{id}/delete", [PortofolioStatiquesController::class, "destroy"]);
+Route::get("/portfolioStatic/{id}/show", [PortofolioStatiquesController::class, "show"]);
+Route::put('/portfolioStatic/{id}/update', [PortofolioStatiquesController::class, 'update']);
+Route::get('/portfolioStatic/{id}/edit', [PortofolioStatiquesController::class, 'edit']);
+
+Route::delete("/blog/{id}/delete", [BlogController::class, "destroy"]);
+Route::get("/blog/{id}/show", [BlogController::class, "show"]);
+Route::put('/blog/{id}/update', [BlogController::class, 'update']);
+Route::get('/blog/{id}/edit', [BlogController::class, 'edit']);
+Route::post('/blogRedirection',[BlogController::class,'store']);
+
+Route::delete("/blogStatic/{id}/delete", [BlogStatiqueController::class, "destroy"]);
+Route::get("/blogStatic/{id}/show", [BlogStatiqueController::class, "show"]);
+Route::put('/blogStatic/{id}/update', [BlogStatiqueController::class, 'update']);
+Route::get('/blogStatic/{id}/edit', [BlogStatiqueController::class, 'edit']);
 // Route::resource('titreHomeStatic',TitreHomeStaticController::class);
