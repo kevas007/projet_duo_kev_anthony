@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeTitreStat;
-use App\Models\TitreHomeStatic;
 use Illuminate\Http\Request;
 
 class HomeTitreStatController extends Controller
@@ -25,7 +24,7 @@ class HomeTitreStatController extends Controller
      */
     public function create()
     {
-
+        return view('pages.backOffice.homeStatic');
     }
 
     /**
@@ -36,7 +35,7 @@ class HomeTitreStatController extends Controller
      */
     public function store(Request $request)
     {
-        $store = new TitreHomeStatic;
+        $store = new HomeTitreStat;
         $store ->titre = $request->titre;
         $store ->para = $request->para;
         $store->save();
@@ -49,9 +48,10 @@ class HomeTitreStatController extends Controller
      * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function show(HomeTitreStat $homeTitreStat)
+    public function show($id)
     {
-        //
+        $show = HomeTitreStat::find($id);
+        return view('pages.backOffice.shomehome2.show', compact('show'));
     }
 
     /**
@@ -60,9 +60,10 @@ class HomeTitreStatController extends Controller
      * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function edit(HomeTitreStat $homeTitreStat)
+    public function edit($id)
     {
-        //
+        $edit = HomeTitreStat::find($id);
+        return view('pages.backOffice.editsta.edit2',compact('edit'));
     }
 
     /**
@@ -72,9 +73,13 @@ class HomeTitreStatController extends Controller
      * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomeTitreStat $homeTitreStat)
+    public function update($id, Request $request)
     {
-        //
+        $update = HomeTitreStat::find($id);
+        $update->titre = $request->titre;
+        $update->para = $request->para;
+        $update->save();
+        return redirect('/backoffice');
     }
 
     /**
@@ -83,8 +88,10 @@ class HomeTitreStatController extends Controller
      * @param  \App\Models\HomeTitreStat  $homeTitreStat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HomeTitreStat $homeTitreStat)
+    public function destroy($id)
     {
-        //
+        $destroy = HomeTitreStat::find($id);
+        $destroy->delete();
+        return redirect("/");
     }
 }

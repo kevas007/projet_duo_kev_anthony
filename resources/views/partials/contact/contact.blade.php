@@ -1,10 +1,10 @@
 <div class="hero hero-max-720 hero-contact background-overlay">
 
     <div class="hero-text">
-        @foreach ($contacStatics as $contacStatic)
-            <h1 class="white-text">{{ $contacStatic->titreContact }}</h1>
-    </div><!-- /.hero-text -->
 
+            <h1 class="white-text">{{ $contacts[0] ->titreContact }}</h1>
+    </div><!-- /.hero-text -->
+    @foreach ($contacStatics as $contacStatic)
     <div class="hero-arrow">
         <a class="scrollTo" href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
     </div><!-- /.hero-arrow -->
@@ -25,8 +25,8 @@
 
                         <div class="get-in-touch">
 
-                            <h2 class="section-title">{{ $contacStatic->sous_titreContact }}</h2>
-                            <p class="small-title mb-50"> {{ $contacStatic->paraContact }} </p>
+                            <h2 class="section-title">{{ $contacts[0] ->sous_titreContact }}</h2>
+                            <p class="small-title mb-50"> {{ $contacts[0] ->paraContact }} </p>
 
                             <ul class="list-unstyled mb-0">
                                 <li>{{ $contacStatic-> name }} </li>
