@@ -14,18 +14,21 @@
             @foreach ($portfolios as $portfolio)
                 <tbody>
                     <tr>
-                        <th scope="row">{{ $portfolio->id }}</th>
-                        <td>{{ $portfolio->titre }}</td>
-                        <td>{{ $portfolio->paragraphe }}</td>
-                        <td>{{ $portfolio->img }}</td>
+                        <th scope="row">{{$portfolio->id}}</th>
+                        <td>{{$portfolio->titre}}</td>
+                        <td>{{$portfolio->paragraphe}}</td>
+                        <td>{{$portfolio->img}}</td>
                         <td>
-                            <form action="/dynamiques/{{$portfolio->id}}/delete" method="POST">
+                            <form action="/portfolio/{{$portfolio->id}}/delete" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-danger">
                                 Delete
                             </button>
                         </form>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary text-white" href="/portfolio/{{$portfolio->id}}/show">SHOW</a>
                         </td>
                 </tbody>
             @endforeach
@@ -37,21 +40,21 @@
 <section class="mt-5 mb-3" >
     <div class="container">
         <div class="row">
-            <form method="post" action="/newdynamiques">
+            <form method="post" action="/porto">
                 @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Titre1</label>
-                            <input type="text" name="i1_service" class="form-control " id="exampleInputEmail1"
+                            <label for="exampleInputEmail1"   class="form-label">titre</label>
+                            <input type="text" name="titre" class="form-control " id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Para1</label>
-                            <input type="text" name="h4_1_service" class="form-control" id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">paragraphe</label>
+                            <input type="text" name="paragraphe" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Titre2</label>
-                            <input type="text" name="p1_service" class="form-control" id="exampleInputEmail1"
+                            <label for="exampleInputEmail1" class="form-label">img</label>
+                            <input type="text" name="img" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
                 <button type="submit" class="btn btn-primary  text-white" >Submit</button>
