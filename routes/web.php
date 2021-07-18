@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContacStaticsController;
 use App\Http\Controllers\ContactTitreStaticController;
 use App\Http\Controllers\HomeDynamiquesController;
 use App\Http\Controllers\HomeStaticsController;
@@ -98,7 +99,9 @@ Route::get('/backoffice/portfolio', function () {
 Route::get('/backoffice/contact', function () {
     $icones = IconeFooter::all();
     $titres=ContactTitreStatic::all();
-    return view('pages.backOffice.contactBack', compact("titres", 'icones'));
+    $contacts = ContactTitreStatic::all();
+    $contacStatics = ContacStatics::all();
+    return view('pages.backOffice.contactBack', compact("titres", 'icones', 'contacts',"contacStatics" ));
 });
 
 
@@ -126,6 +129,20 @@ Route::put('/titreStatic/{id}/update', [HomeTitreStatController::class, 'update'
 Route::get('/titreStatic',[HomeTitreStatController::class,'create']);
 Route::post('/titreStatic',[HomeTitreStatController::class,'store']);
 Route::delete("/titreStatic/{id}/delete", [HomeTitreStatController::class, "destroy"]);
+
+Route::get('/ContactTitre/{id}/show', [ContactTitreStaticController::class, 'show']);
+Route::get('/ContactTitre/{id}/edit', [ContactTitreStaticController::class, 'edit']);
+Route::put('/ContactTitre/{id}/update', [ContactTitreStaticController::class, 'update']);
+Route::get('/ContactTitre',[ContactTitreStaticController::class,'create']);
+Route::post('/ContactTitre',[ContactTitreStaticController::class,'store']);
+Route::delete("/ContactTitre/{id}/delete", [ContactTitreStaticController::class, "destroy"]);
+
+Route::get('/Contact/{id}/show', [ContacStaticsController::class, 'show']);
+Route::get('/Contact/{id}/edit', [ContacStaticsController::class, 'edit']);
+Route::put('/Contact/{id}/update', [ContacStaticsController::class, 'update']);
+Route::get('/Contact',[ContacStaticsController::class,'create']);
+Route::post('/Contact',[ContacStaticsController::class,'store']);
+Route::delete("/Contact/{id}/delete", [ContacStaticsController::class, "destroy"]);
 
 Route::get('/SectionHome/{id}/show', [SectionHomeStaticController::class, 'show']);
 Route::get('/SectionHome/{id}/edit', [SectionHomeStaticController::class, 'edit']);
