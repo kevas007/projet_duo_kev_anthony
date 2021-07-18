@@ -34,9 +34,10 @@ class ContacStaticsController extends Controller
     public function update($id,Request $request)
     {
         $update = ContacStatics::find($id);
-        $update->titreContact = $request->titreContact;
-        $update->sous_titreContact = $request->sous_titreContact;
-        $update->paraContact = $request->paraContact;
+        $update->name = $request->name;
+        $update->phone = $request->phone;
+        $update->phone = $request->phone;
+        $update->email = $request->email;
         $update->save();
         return redirect('/backoffice/contact');
     }
