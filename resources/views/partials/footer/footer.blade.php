@@ -81,7 +81,7 @@
     </div>
 
     <div class="copyright">
-        <p>{!! $footer->p !!}</p>
+        <p>&copy; 2017 BusinessPerfect | Made by <a href="http://milansavov.com/" class="yellow-text">Milan Savov</a></p>
     </div><!-- /.copyright -->
 
     @endforeach
